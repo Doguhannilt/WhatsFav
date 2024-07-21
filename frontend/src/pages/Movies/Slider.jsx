@@ -34,7 +34,7 @@ const Slider = () => {
                     </div>
                 ))}
             </div>
-            <div className="absolute bottom-0 left-0 right-0 flex justify-center p-4">
+            <div className="absolute bottom-0  left-0 right-0 flex justify-center p-4">
                 {videos.map((_, index) => (
                     <button
                         key={index}

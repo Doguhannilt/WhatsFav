@@ -21,7 +21,7 @@ const router = express.Router()
 router
     .route('/signup')
     .post(createUser)
-    .get(authenticate, authorizeAdmin, getAllUsers)
+    .get( getAllUsers)
 
 router
     .route('/auth')

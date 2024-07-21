@@ -29,7 +29,8 @@ const Login = () => {
       toast.success('You are logged, welcome.')
       navigate('/movies')
     } catch (error) {
-      toast.error('Something went wrong :(')
+      toast.error(error)
+      console.log(error)
     }
   }
 

@@ -25,7 +25,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="fixed  bottom-0 left-0 right-0 opacity-50 hover:opacity-100  text-white py-4 shadow-2xl">
+        <nav className="fixed z-10  bottom-0 left-0 right-0 opacity-50 hover:opacity-100  text-white py-4 shadow-2xl">
             <div className="container mx-auto flex justify-center">
                 <ul className="flex space-x-8">
                     <li className="">

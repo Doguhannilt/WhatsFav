@@ -13,6 +13,9 @@ import { middlewares } from './config/middlewares.js';
 import userRoutes from './routes/userRoutes.js'
 import productRoutes from './routes/productRoutes.js'
 import categoryRoutes from './routes/categoryRoutes.js'
+import selectRoutes from './routes/selectRoutes.js'
+import filterRoutes from './routes/userFilterRoutes.js'
+
 
 // Classes
 dotenv.config()
@@ -29,5 +32,7 @@ middlewares(app, express)
 app.use('/api/v1/users', userRoutes)
 app.use('/api/v1/product', productRoutes)
 app.use('/api/v1/category', categoryRoutes)
+app.use('/api/v1/movies', selectRoutes)
+app.use('/api/v1/filter', filterRoutes)
 
 app.listen(PORT, () => console.log(`Server is running ${PORT}`))

@@ -10,7 +10,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 const Profile = () => {
     const { userInfo } = useSelector((state) => state.auth)
     return (
-        <div className='bg-black  min-h-screen'>
+        <div className='bg-slate-950  min-h-screen'>
             <Navbar />
             <div className='grid grid-cols-2 gap-8 p-20 '>
                 <div className=''>
