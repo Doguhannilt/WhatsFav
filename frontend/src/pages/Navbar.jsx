@@ -53,12 +53,6 @@ const Navbar = () => {
                         <div className="absolute left-0 w-full h-1 bg-yellow-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></div>
                     </li>
                     <li className="navbar-item group relative">
-                        <a href="/list" className="py-2 px-4 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:text-yellow-500">
-                            Make a list
-                        </a>
-                        <div className="absolute left-0 w-full h-1 bg-yellow-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></div>
-                    </li>
-                    <li className="navbar-item group relative">
                         <a className="py-2 px-4 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:text-yellow-500">
                             <button
                                 onClick={logoutHandler}
