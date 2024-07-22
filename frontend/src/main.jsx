@@ -23,7 +23,6 @@ import Profile from './pages/User/Profile.jsx';
 import Contact from './pages/Contact/Contact.jsx';
 import DetailPage from './DetailPage.jsx';
 import Favorites from './Favorites.jsx';
-import List from './List/List.jsx';
 
 // AuthWrapper Component
 const AuthWrapper = () => {
@@ -71,10 +70,7 @@ const AuthWrapper = () => {
                         path='/favorites/'
                         element={<Favorites />}
                     />
-                    <Route
-                        path='/list'
-                        element= {<List/>}
-                    />
+               
                 </>
             ) : (
                 <Route

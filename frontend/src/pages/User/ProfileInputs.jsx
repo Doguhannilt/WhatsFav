@@ -39,10 +39,10 @@ const ProfileInputs = () => {
             <div class="flex justify-center mt-20 px-8">
                 <form class="" onSubmit={submitHandler}>
                     <div class="flex flex-wrap border shadow rounded-lg p-3 dark:bg-gray-600">
-                        <h2 class="text-xl text-gray-600 dark:text-gray-300 pb-2">Account settings:</h2>
+                        <h2 class="text-xl text-white dark:text-gray-300 pb-2">Account settings:</h2>
                         <div class="flex flex-col gap-2 w-full ">
                             <div>
-                                <label class="text-gray-600 dark:text-gray-400">Username
+                                <label class="text-white dark:text-gray-400">Username
                                 </label>
                                 <input
                                     class="w-full py-3 border bg-transparent text-white border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
@@ -52,7 +52,7 @@ const ProfileInputs = () => {
                                 />
                             </div>
                             <div>
-                                <label class="text-gray-600 dark:text-gray-400">Email</label>
+                                <label class="text-white dark:text-gray-400">Email</label>
                                 <input
                                     class="w-full py-3 border bg-transparent text-white  border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
                                     type="text"
@@ -61,7 +61,7 @@ const ProfileInputs = () => {
                                 />
                             </div>
                             <div>
-                                <label class="text-gray-600 dark:text-gray-400">Password</label>
+                                <label class="text-white dark:text-gray-400">Password</label>
                                 <input
                                     class="w-full py-3 border bg-transparent text-white border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow dark:bg-gray-600 dark:text-gray-100"
                                     type="password"
