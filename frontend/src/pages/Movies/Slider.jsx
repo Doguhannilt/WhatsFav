@@ -24,7 +24,7 @@ const Slider = () => {
     }, []);
 
     return (
-        <div className="relative w-full overflow-hidden">
+        <div className="relative w-full ">
             <div className="flex transition-transform duration-1000" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                 {videos.map((video, index) => (
                     <div className="min-w-full flex justify-center" key={index}>

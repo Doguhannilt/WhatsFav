@@ -20,7 +20,6 @@ const filterSlice = createSlice({
                       localStorage.setItem('filterInfo', JSON.stringify(updatedInfo));
         },
         setInfoCredentialsClear(state, action) {
-            state.filterInfo = null;
             localStorage.removeItem('filterInfo');
 
         }

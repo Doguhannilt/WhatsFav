@@ -76,7 +76,7 @@ const Filter = () => {
                 </div>
 
                 {/* Rating */}
-                <div className="flex items-center flex-1 justify-center bg-white p-2 rounded ">
+                <div className="flex items-center flex-1 justify-center font-bold bg-white p-2 rounded ">
                     <input
                         placeholder="Rating?"
                         className="text-md w-full focus:outline-none"

@@ -9,7 +9,7 @@ const ParticleCanvas = () => {
     const ctx = canvas.getContext('2d');
 
     // Arka plan rengini ayarla
-    const backgroundColor = '#000000'//'#1E293B'; // bg-slate-950 renk kodu
+    const backgroundColor = '#000033'// '#1E293B';  bg-slate-950 renk kodu
     const particleColors = ['#334155', '#475569', '#64748B']; // bg-slate-950'ye yakın renkler
 
     const particles = [];
@@ -43,7 +43,7 @@ const ParticleCanvas = () => {
         if (particle.y > canvas.height || particle.y < 0) particle.speedY *= -1;
 
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 3);
         ctx.fillStyle = particle.color;
         ctx.fill();
       });
