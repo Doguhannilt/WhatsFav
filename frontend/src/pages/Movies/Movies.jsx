@@ -19,8 +19,8 @@ const Movies = () => {
                 <Navbar />
                 <main className="flex-grow">
                     <Search />
-                    <Filter />
                     <Slider />
+                    <Filter /> 
                     <FavSlider />
                     <HorrorSlider />
                     <SadSlider />

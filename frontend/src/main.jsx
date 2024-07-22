@@ -21,6 +21,9 @@ import Login from './pages/Auth/Login.jsx';
 import Movies from './pages/Movies/Movies.jsx';
 import Profile from './pages/User/Profile.jsx';
 import Contact from './pages/Contact/Contact.jsx';
+import DetailPage from './DetailPage.jsx';
+import Favorites from './Favorites.jsx';
+import List from './List/List.jsx';
 
 // AuthWrapper Component
 const AuthWrapper = () => {
@@ -60,12 +63,24 @@ const AuthWrapper = () => {
                         path='/contact'
                         element={<Contact />}
                     />
+                    <Route
+                        path='/page/:id'
+                        element={<DetailPage />}
+                    />
+                    <Route
+                        path='/favorites/'
+                        element={<Favorites />}
+                    />
+                    <Route
+                        path='/list'
+                        element= {<List/>}
+                    />
                 </>
             ) : (
-                    <Route
-                        path='/signup'
-                        element={<Signup />}
-                    />
+                <Route
+                    path='/signup'
+                    element={<Signup />}
+                />
             )}
 
         </Route>

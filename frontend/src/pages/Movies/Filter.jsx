@@ -1,68 +1,73 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { useNameFilterMutation, useRatingFilterMutation, useYearFilterMutation } from '../../redux/api/filter';
 import { setInfoCredentials, setInfoCredentialsClear } from '../../redux/filter/filterSlice';
 
-
 const Filter = () => {
-
     const [name, setName] = useState('');
     const [rating1, setRating] = useState(0);
     const [year1, setYear] = useState('');
 
     const dispatch = useDispatch();
-    const [nameFilter, { data, error, isLoading }] = useNameFilterMutation();
-    const [ratingFilter] = useRatingFilterMutation()
-    const [yearFilter] = useYearFilterMutation()
+    const [nameFilter] = useNameFilterMutation();
+    const [ratingFilter] = useRatingFilterMutation();
+    const [yearFilter] = useYearFilterMutation();
 
     const handleSearch = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
+        
+        const filters = [];
+    
+        if (name) {
+            filters.push({ type: 'name', value: name });
+        }
+        if (rating1) {
+            filters.push({ type: 'rating', value: Number(rating1) });
+        }
+        if (year1) {
+            filters.push({ type: 'year', value: Number(year1) });
+        }
+    
+        if (filters.length === 0) {
+            toast.error('Please provide at least one filter criterion');
+            return;
+        }
+    
         try {
-            console.log(name)
-            if (name) {
-                const res = await nameFilter({ name }).unwrap()
-                console.log(res)
-                dispatch(setInfoCredentials(res))
-                console.log('Dispatched:', res);
-                toast.success('Your filtered movies based on "name" are displayed in the section below')
-            }
-            if (rating1) {
-
-                try {
-                    const rating = Number(rating1)
-                    console.log(rating);
-                    const res = await ratingFilter({ rating }).unwrap()
-                    console.log(res)
-                    dispatch(setInfoCredentials(res))
-                    console.log('Dispatched:', res);
-                    toast.success('Your filtered movies based on "rating" are displayed in the section below')
-                } catch (error) {
-                    console.log(error)
+            for (const filter of filters) {
+                let res;
+                switch (filter.type) {
+                    case 'name':
+                        res = await nameFilter({ name: filter.value }).unwrap();
+                        break;
+                    case 'rating':
+                        res = await ratingFilter({ rating: filter.value }).unwrap();
+                        break;
+                    case 'year':
+                        res = await yearFilter({ year: filter.value }).unwrap();
+                        break;
+                    default:
+                        throw new Error('Unknown filter type');
                 }
-            }
-            if (year1) {
-                const year = Number(year1)
-                const res = await yearFilter({ year }).unwrap()
-                console.log(res)
-                dispatch(setInfoCredentials(res))
-                console.log('Dispatched:', res);
-                toast.success('Your filtered movies based on "year" are displayed in the section below')
+                console.log(res);
+                dispatch(setInfoCredentials(res));
+                toast.success(`Your filtered movies based on "${filter.type}" are displayed in the section below`);
             }
         } catch (error) {
-            toast.error(error)
-            console.log(error)
+            toast.error('An error occurred while fetching filtered movies');
+            console.error(error);
         }
-    }
+    };
 
     const handleClear = async (e) => {
-        e.preventDefault()
-        dispatch(setInfoCredentialsClear())
-        toast.success('Your filter is removed')
-     }
+        e.preventDefault();
+        dispatch(setInfoCredentialsClear());
+        toast.success('Your filter is removed');
+    };
     
     return (
-        <div className="mb-10 relative z-10 ">
+        <div className="mb-10 relative z-10 mt-10 ">
         
             <form className="-mt-4 p-3  hover:bg-gray-700 duration-500 rounded shadow-md  grid grid-cols-3  2xl:grid-cols-4 items-center gap-4">
                 <div className="flex items-center flex-1 justify-center bg-white  p-2 rounded ">

@@ -1,9 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    filterInfo: localStorage.getItem('filterInfo')
-        ? JSON.parse(localStorage.getItem('filterInfo'))
-        : {}
+    filterInfo: JSON.parse(localStorage.getItem('filterInfo')) || []
+
 };
 
 const filterSlice = createSlice({
@@ -11,14 +10,11 @@ const filterSlice = createSlice({
     initialState,
     reducers: {
         setInfoCredentials(state, action) {
-                     
-                      const currentInfo = state.filterInfo || {};
-                   
-                      const updatedInfo = { ...currentInfo, ...action.payload };
-                      state.filterInfo = updatedInfo;
-                     
-                      localStorage.setItem('filterInfo', JSON.stringify(updatedInfo));
-        },
+            if (!state.filterInfo.some(film => film._id === action.payload._id)) {
+                state.filterInfo.push(action.payload);
+                localStorage.setItem('filterInfo', JSON.stringify(state.filterInfo));
+            }
+        },        
         setInfoCredentialsClear(state, action) {
             localStorage.removeItem('filterInfo');
 
