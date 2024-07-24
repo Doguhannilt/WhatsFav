@@ -38,7 +38,7 @@ const ProfileInputs = () => {
         <div>
             <div class="flex justify-center mt-20 px-8">
                 <form class="" onSubmit={submitHandler}>
-                    <div class="flex flex-wrap border shadow rounded-lg p-3 dark:bg-gray-600">
+                    <div class="flex flex-wrap  shadow rounded-lg p-3 dark:bg-gray-600">
                         <h2 class="text-xl text-white dark:text-gray-300 pb-2">Account settings:</h2>
                         <div class="flex flex-col gap-2 w-full ">
                             <div>
@@ -69,9 +69,9 @@ const ProfileInputs = () => {
                                     onChange={e => setPassword(e.target.value)}
                                 />
                             </div>
-                            <div class="flex justify-end">
+                            <div class="flex justify-end hover:duration-500 duration-1000">
                                 <button
-                                    class="py-1.5 px-3 m-1 text-center  border rounded-md text-white  hover:bg-gray-800 hover:text-gray-100 dark:text-gray-200 dark:bg-violet-700"
+                                    className="hover:w-40  py-1.5 px-3 m-1 text-center  border rounded-md text-white   hover:text-gray-100 dark:text-gray-200 dark:bg-violet-700"
                                     type="submit">Save changes</button>
                             </div>
                         </div>

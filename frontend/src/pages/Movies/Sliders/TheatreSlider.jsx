@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { useSelectComedyQuery } from '../../../redux/api/genre/genre';
+import { useSelectTheatreQuery } from '../../../redux/api/genre/genre';
 
-const ComedySlider = () => {
-    const { data = [], error, isLoading } = useSelectComedyQuery();
+const TheatreSlider = () => {
+    const { data = [], error, isLoading } = useSelectTheatreQuery();
     const scrollContainer = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -36,7 +36,7 @@ const ComedySlider = () => {
 
     return (
         <div className="overflow-x-auto whitespace-nowrap py-4">
-            <h1 className="font-bold text-4xl mt-10 text-white ml-4 mb-10">COMEDY ({data.length})</h1>
+            <h1 className="font-bold text-4xl mt-10 text-white ml-4 mb-10">THEATRE ({data.length})</h1>
             <div
                 ref={scrollContainer}
                 className="flex space-x-4 overflow-hidden"
@@ -48,7 +48,7 @@ const ComedySlider = () => {
                 {data.map((item) => (
                     <div
                         key={item._id}
-                        className="max-w-sm cursor-grab bg-teal-950 ml-5 mb-10 hover:scale-105 duration-300 rounded-lg shadow-lg "
+                        className="max-w-sm cursor-grab bg-teal-950  ml-5 mb-10 hover:scale-105 duration-300 rounded-lg shadow-lg "
                     >
                         <a href={`/page/${item._id}`}>
                             <img className="rounded-t-lg" src={item.image} alt={item.title} />
@@ -72,4 +72,4 @@ const ComedySlider = () => {
     );
 };
 
-export default ComedySlider;
+export default TheatreSlider;

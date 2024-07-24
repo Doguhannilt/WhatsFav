@@ -3,8 +3,10 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { useNameFilterMutation, useRatingFilterMutation, useYearFilterMutation } from '../../redux/api/filter';
 import { setInfoCredentials, setInfoCredentialsClear } from '../../redux/filter/filterSlice';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Filter = () => {
+    const [isOpen, setIsOpen] = useState(false);
     const [name, setName] = useState('');
     const [rating1, setRating] = useState(0);
     const [year1, setYear] = useState('');
@@ -18,7 +20,7 @@ const Filter = () => {
         e.preventDefault();
         
         const filters = [];
-    
+        
         if (name) {
             filters.push({ type: 'name', value: name });
         }
@@ -28,12 +30,12 @@ const Filter = () => {
         if (year1) {
             filters.push({ type: 'year', value: Number(year1) });
         }
-    
+        
         if (filters.length === 0) {
             toast.error('Please provide at least one filter criterion');
             return;
         }
-    
+        
         try {
             for (const filter of filters) {
                 let res;
@@ -65,63 +67,80 @@ const Filter = () => {
         dispatch(setInfoCredentialsClear());
         toast.success('Your filter is removed');
     };
-    
+
     return (
-        <div className="mb-10 relative z-10 mt-10 ">
-        
-            <form className="-mt-4 p-3  hover:bg-gray-700 duration-500 rounded shadow-md  grid grid-cols-3  2xl:grid-cols-4 items-center gap-4">
-                <div className="flex items-center flex-1 justify-center bg-white  p-2 rounded ">
-                    {/* NAME */}
-                    <input
-                        placeholder="Name?"
-                        className="text-md w-full focus:outline-none"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                </div>
+        <motion.div className="relative text-center w-full z-10 mt-10 mb-10">
+            <button
+                className="bg-teal-800  hover:scale-105 hover:w-60 hover:bg-transparent hover:duration-500 duration-500 text-white p-3 rounded-lg font-bold"
+                onClick={() => setIsOpen(!isOpen)}
+            >
+                {isOpen ? 'Close Filters' : 'Use filter'}
+            </button>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className=" p-6 rounded-lg mt-4"
+                    >
+                        <motion.form
+                            className="p-6  rounded-lg shadow-md grid grid-cols-1 md:grid-cols-3 gap-6"
+                            initial={{ scale: 0.8 }}
+                            animate={{ scale: 1 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <motion.div className="flex items-center justify-center p-2 bg-white bg-opacity-30 rounded-lg" whileHover={{ scale: 1.05 }}>
+                                <input
+                                    placeholder="Name?"
+                                    className="text-md w-full bg-transparent focus:outline-none text-gray-200 placeholder-gray-400"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                />
+                            </motion.div>
 
-                {/* Rating */}
-                <div className="flex items-center flex-1 justify-center font-bold bg-white p-2 rounded ">
-                    <input
-                        placeholder="Rating?"
-                        className="text-md w-full focus:outline-none"
-                        value={rating1}
-                        onChange={(e) => setRating(e.target.value)}
-                    />
-                </div>
+                            <motion.div className="flex items-center justify-center p-2 bg-white bg-opacity-30 rounded-lg" whileHover={{ scale: 1.05 }}>
+                                <input
+                                    placeholder="Rating?"
+                                    className="text-md w-full bg-transparent focus:outline-none text-gray-200 placeholder-gray-400"
+                                    value={rating1}
+                                    onChange={(e) => setRating(e.target.value)}
+                                />
+                            </motion.div>
 
-                {/* Year */}
-                <div className="flex items-center flex-1 justify-center bg-white  p-2 rounded">
+                            <motion.div className="flex items-center justify-center p-2 bg-white bg-opacity-30 rounded-lg" whileHover={{ scale: 1.05 }}>
+                                <input
+                                    placeholder="Year?"
+                                    className="text-md w-full bg-transparent focus:outline-none text-gray-200 placeholder-gray-400"
+                                    value={year1}
+                                    onChange={(e) => setYear(e.target.value)}
+                                />
+                            </motion.div>
 
-                    <input
-                        placeholder="Year?"
-                        className="text-md w-full focus:outline-none"
-                        value={year1}
-                        onChange={(e) => setYear(e.target.value)}
-                    />
-                </div>
-
-
-
-                {/* BUTTONS */}
-                <div className='flex gap-1 justify-center'>
-                    <button
-                        type="button"
-                        onClick={handleSearch}
-                        className='w-full bg-blue-800 rounded text-white h-full p-2 font-bold text-xl duration-600 hover:bg-slate-500'>
-                        Search
-                    </button>
-                    <button
-                        className='bg-red-600 text-white h-full  rounded  p-2 font-bold text-xl lg:w-full md:w-full hover:bg-red-500'
-                        onClick={handleClear}>
-                        Clear
-                    </button>
-
-                </div>
-            </form>
-
-        </div>
-    )
+                            <div className="flex gap-4 justify-center col-span-full mt-4">
+                                <motion.button
+                                    type="button"
+                                    onClick={handleSearch}
+                                    className="w-full bg-teal-600 rounded-lg text-white py-2 font-bold text-lg duration-600 hover:bg-teal-500"
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    Search
+                                </motion.button>
+                                <motion.button
+                                    className="w-full bg-red-600 rounded-lg text-white py-2 font-bold text-lg duration-600 hover:bg-red-500"
+                                    onClick={handleClear}
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    Clear
+                                </motion.button>
+                            </div>
+                        </motion.form>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.div>
+    );
 }
 
 export default Filter

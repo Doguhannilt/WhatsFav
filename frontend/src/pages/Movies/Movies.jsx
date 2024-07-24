@@ -8,10 +8,11 @@ import FavSlider from './Sliders/FavSlider'
 import HorrorSlider from './Sliders/HorrorSlider'
 import SadSlider from './Sliders/SadSlider'
 import ComedySlider from './Sliders/ComedySlider'
-
+import '../../index.css'
+import TheatreSlider from './Sliders/TheatreSlider'
 const Movies = () => {
     return (
-        <div className="relative min-h-screen bg-gradient-to-t from-slate-900 via-orange-900 to-red-950 overflow-hidden">
+        <div className="relative min-h-screen bg-gradient-animation overflow-hidden">
             {/* Partikül arka planı */}
 
             {/* İçerik alanı */}
@@ -24,7 +25,8 @@ const Movies = () => {
                     <FavSlider />
                     <HorrorSlider />
                     <SadSlider />
-                    <ComedySlider/>
+                    <ComedySlider />
+                    <TheatreSlider/>
                 </main>
             </div>
         </div>

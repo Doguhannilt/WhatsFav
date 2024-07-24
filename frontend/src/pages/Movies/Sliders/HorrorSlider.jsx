@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useSelectHorrorQuery } from '../../../redux/api/genre/genre';
-
+import { motion } from 'framer-motion';
 const HorrorSlider = () => {
     const { data = [], error, isLoading } = useSelectHorrorQuery();
     const scrollContainer = useRef(null);
@@ -46,9 +46,14 @@ const HorrorSlider = () => {
                 onMouseMove={handleMouseMove}
             >
                 {data.map((item) => (
-                    <div
+                    <motion.div
                         key={item._id}
-                        className="max-w-sm cursor-grab bg-slate-800 ml-5 mb-10 hover:scale-105 duration-300 rounded-lg shadow-lg border border-slate-900"
+                        className="max-w-sm cursor-grab bg-teal-950 ml-5 mb-10 hover:scale-105 duration-300 rounded-lg shadow-lg "
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                     >
                         <a href={`/page/${item._id}`}>
                             <img className="rounded-t-lg" src={item.image} alt={item.title} />
@@ -65,7 +70,7 @@ const HorrorSlider = () => {
                                 </svg>
                             </a>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

@@ -27,11 +27,11 @@ const Favorites = () => {
                 <h1 className='text-4xl font-bold text-white mb-8'>Favorite Films</h1>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6'>
                     {favoriteFilms.map((film) => (
-                        <div key={film._id} className='bg-gray-900 rounded-lg shadow-lg hover:scale-105 duration-300 overflow-hidden'>
+                        <div key={film._id} className='bg-gray-900  rounded-lg shadow-lg hover:scale-105 duration-300 overflow-hidden'>
                             <img
                                 src={film.image || 'https://via.placeholder.com/400x250'}
                                 alt={film.title || 'No title'}
-                                className='w-full h-48 object-cover'
+                                className='w-full h-48 object-cover '
                             />
                             <div className='p-4'>
                                 <h2 className='text-xl font-bold text-white'>{film.title || 'No title'}</h2>

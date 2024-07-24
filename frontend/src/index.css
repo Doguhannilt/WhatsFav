@@ -8,3 +8,52 @@ body {
     padding: 0;
     height: 100%;
 }
+
+
+@keyframes gradientAnimation {
+    0% {
+      background-position: 0% 0%;
+    }
+    25% {
+      background-position: 50% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75% {
+      background-position: 50% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+  .bg-gradient-animation {
+    background: linear-gradient(45deg, #02a093, #009688, #004d40, #11847a);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+
+  }
+
+.scrollable-container {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.scrollable-container::-webkit-scrollbar {
+  height: 8px; 
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 4px; 
+
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

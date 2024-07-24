@@ -35,7 +35,7 @@ const DetailPage = () => {
                     <img
                         src={film.image || 'default-image-url'} 
                         alt={film.title || 'No title'}
-                        className='w-full h-full object-cover rounded-t-lg lg:rounded-tr-none lg:rounded-l-lg '
+                        className='w-full h-full object-cover rounded-t-lg hover:w-full lg:rounded-tr-none lg:rounded-l-lg '
                     />
                 </div>
                 <div className='lg:w-1/2 p-6 flex flex-col justify-between'>

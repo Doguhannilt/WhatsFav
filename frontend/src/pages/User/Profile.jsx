@@ -28,7 +28,7 @@ const Profile = () => {
                             </p>
                             <p className="pt-2 text-gray-600 text-xs lg:text-sm flex items-center justify-center lg:justify-start">
                                 <RiLockPasswordLine size={20} className='' />
-                                <span className='ml-2'>{userInfo.password || <span>●●●●●●●●●●●●● </span>}</span>
+                                <span className='ml-2'>{userInfo.password || <span> ●●●●●●●●●●●●● </span>}</span>
                             </p>
                             <p className="pt-8 text-sm opacity-50">This is your profile. When you update your profile, it may take a while to display.</p>
                         </div>

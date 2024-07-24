@@ -9,7 +9,7 @@ const ParticleCanvas = () => {
     const ctx = canvas.getContext('2d');
 
     // Arka plan rengini ayarla
-    const backgroundColor = '#000033'// '#1E293B';  bg-slate-950 renk kodu
+    const backgroundColor = '#1E293B'// '';  bg-slate-950 renk kodu
     const particleColors = ['#334155', '#475569', '#64748B']; // bg-slate-950'ye yakın renkler
 
     const particles = [];

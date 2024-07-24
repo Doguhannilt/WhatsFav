@@ -26,10 +26,10 @@ const SearchPopup = () => {
     };
 
     return (
-        <div className="relative">
+        <div className="relative flex text-center self-center items-center">
             {/* Search Icon */}
             <button
-                className="flex items-center justify-center p-2 rounded-full bg-primary text-white hover:bg-primary-accent-300"
+                className="flex text-center self-center items-center justify-center p-2 rounded-full bg-primary text-white hover:bg-primary-accent-300"
                 onClick={togglePopup}
                 aria-label="Search"
             >
@@ -51,17 +51,17 @@ const SearchPopup = () => {
 
             {/* Popup */}
             {showPopup && (
-                           <div className="absolute top-full mt-3 w-[30rem] bg-primary text-black border border-gray-300 rounded-lg shadow-lg z-10">
+                           <div className="absolute top-full mt-3 w-[30rem] bg-primary text-black  rounded-lg shadow-2xl z-10">
                            <div className="p-4">
                                <input
                                    type="search"
-                                   className="w-full border border-gray-300 rounded-lg px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary transition duration-200"
+                                   className="w-full border border-gray-300 opacity-50 hover:opacity-80 rounded-lg px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary transition duration-200"
                                    placeholder="Search"
                                    value={search}
                                    onChange={handleInputChange}
                                />
                                <button
-                                   className="mt-4 px-6 py-2 bg-primary text-white bg-blue-600 rounded-lg shadow-md hover:bg-primary-accent-300 focus:outline-none focus:ring-2 focus:ring-primary transition duration-200"
+                                   className="mt-4 px-6 py-2 bg-primary text-white bg-slate-800 hover:bg-slate-700 rounded-lg shadow-md hover:bg-primary-accent-300 focus:outline-none focus:ring-2 focus:ring-primary transition duration-200"
                                    onClick={handleSearchClick}
                                >
                                    Search
@@ -69,7 +69,7 @@ const SearchPopup = () => {
                            </div>
 
                     {/* Search Results */}
-                    <div className="p-4 border-t border-gray-300">
+                    <div className="p-4 border-t border-gray-300 shadow-lg">
                         {data && data.length > 0 ? (
                             <ul>
                                 {data.map((item) => (

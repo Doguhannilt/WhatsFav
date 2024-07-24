@@ -24,12 +24,16 @@ const Slider = () => {
     }, []);
 
     return (
-        <div className="relative w-full ">
+        <div className="relative  hover:scale-110 duration-500 hover:translate-y-10">
             <div className="flex transition-transform duration-1000" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
                 {videos.map((video, index) => (
                     <div className="min-w-full flex justify-center" key={index}>
                         <video className="rounded-2xl" autoPlay loop muted>
-                            <source src={video} type="video/mp4" />
+                            <source
+                                src={video}
+                                type="video/mp4"
+                                className=''
+                            />
                         </video>
                     </div>
                 ))}

@@ -4,13 +4,13 @@ import { setInfoCredentials } from '../../../redux/filter/filterSlice';
 
 const FavSlider = () => {
     const filterInfoFromStore = useSelector((state) => state.filter.filterInfo);
-
+    console.log(filterInfoFromStore)
     // Verilerin düzleştirilmesi
     const flattenedFilterInfo = filterInfoFromStore.flat();
 
     console.log(flattenedFilterInfo);
     return (
-        <div className="overflow-x-auto whitespace-nowrap py-4">
+        <div className="overflow-x-auto whitespace-nowrap py-4 scrollable-container">
             <h1 className="font-bold text-4xl mt-10 text-white ml-4 mb-10">
                 YOUR SEARCH ({flattenedFilterInfo.length})
             </h1>
@@ -19,7 +19,7 @@ const FavSlider = () => {
                 {flattenedFilterInfo.map((item) => (
                     <div
                         key={item._id}
-                        className="max-w-sm bg-slate-800 ml-5 mb-10 hover:scale-105 duration-300 rounded-lg shadow-lg border border-slate-900"
+                        className="max-w-sm  bg-teal-950 ml-5 mb-10 hover:scale-105 duration-300 rounded-lg shadow-2xl border border-gray-700"
                     >
                         <a href={`/page/${item._id}`}>
                             <img

@@ -48,7 +48,7 @@ const SadSlider = () => {
                 {data.map((item) => (
                     <div
                         key={item._id}
-                        className="max-w-sm cursor-grab bg-slate-800 ml-5 mb-10 hover:scale-105 duration-300 rounded-lg shadow-lg border border-slate-900"
+                        className="max-w-sm cursor-grab bg-teal-950  ml-5 mb-10 hover:scale-105 duration-300 rounded-lg shadow-lg "
                     >
                         <a href={`/page/${item._id}`}>
                             <img className="rounded-t-lg" src={item.image} alt={item.title} />
