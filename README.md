@@ -75,6 +75,21 @@ https://github.com/user-attachments/assets/10c24ef7-1689-4348-84d6-49fffbb3c608
 - **State Management**: Redux
 - **API Requests**: RTK Query
 
+## .env file
+
+```
+POST=3000
+MONGO_URI="mongodb://***********/test"
+JWT_SECRET=
+NODE_ENV=
+// Contact
+SERVICE_ID=""
+TEMPLATE_ID=""
+PUBLIC_KEY=""
+// All Images will be here
+IMAGE_URL="./frontend/public/images/"
+```
+
 ## Getting Started
 
 To get a local copy up and running, follow these steps.
