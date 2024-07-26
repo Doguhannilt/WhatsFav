@@ -3,6 +3,29 @@
 
 WhatsFav is a web application designed to help users select their favorite films based on various filters. The project utilizes the MERN stack (MongoDB, Express, React, Node.js) to provide a seamless and interactive experience.
 
+## UPDATE (27 JULY 2024)
+
+- The user can choose the background colors
+```
+// bg-stone-950
+// bg-amber-950
+// bg-yellow-900
+// bg-indigo-950
+// DEFAULT: bg-blue-950
+```
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/1b87ec93-42c2-4c9e-9191-80dc8e324bbc" alt="BG-BLUE" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/93879960-141f-4ec8-bd0f-2feeb4894f2e" alt="BG-STONE" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/b2392c95-9f09-4328-b834-1f770a263754" alt="BG-AMBER" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/ac27654b-a428-4e24-ace1-987040669105" alt="BG-YELLOW" width="200"></td>
+      <td><img src="https://github.com/user-attachments/assets/5fe8dcdb-2a84-42d2-9fdc-a2a6ca4c11c8" alt="BG-INDIGO" width="200"></td>
+
+  </tr>
+</table>
+
+
+
 ## UPDATE (24 JULY 2024)
 
 - The background color has been changed and used more of a color palette
