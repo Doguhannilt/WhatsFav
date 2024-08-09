@@ -3,6 +3,19 @@
 
 WhatsFav is a web application designed to help users select their favorite films based on various filters. The project utilizes the MERN stack (MongoDB, Express, React, Node.js) to provide a seamless and interactive experience.
 
+## UPDATE (9 AUGUST 2024)
+```
+- Dark Theme Added
+- Main Page Video is now fullscreen
+```
+
+<table align="center">
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/7603bfe2-fd61-4c1a-965f-3a82077d37ed" alt="Image1" width="200"></td>
+    <td><img src="https://github.com/user-attachments/assets/d242cc21-302c-49fa-a540-2d64ae5582f1" alt="Image2" width="200"></td>
+  </tr>
+</table>
+
 ## UPDATE (27 JULY 2024)
 
 - The user can choose the background colors
